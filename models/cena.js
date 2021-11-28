@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
-const database = require('./db');
+const database = require('../db');
+const Propriedade = require('./propriedade');
  
-const Equipamento = database.define('equipamento', {
+const Cena = database.define('cena', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -12,15 +13,7 @@ const Equipamento = database.define('equipamento', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    local: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    status: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
     descricao: Sequelize.STRING
 })
  
-module.exports = Equipamento;
+module.exports = Cena;
