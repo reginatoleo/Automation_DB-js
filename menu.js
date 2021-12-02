@@ -4,11 +4,13 @@ const crudProp = require('./crud_prop');
 const prompt = require('prompt-sync')();
 var menu = require('console-menu');
 
+// função para fazer o input no terminal
 function userInput (texto) {
     const name = prompt(texto);
         return name
 }
 
+// construção do menu principal
 menu([
     { hotkey: '1', title: 'Listar Equipamentos', selected: true },
     { hotkey: '2', title: 'Editar Equipamento' },

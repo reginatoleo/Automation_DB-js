@@ -12,11 +12,7 @@ function createPropriedade(nomePropriedade, descricaoPropriedade, idEquip) {
     (async () => {
         // inicia conexão com a database
         const database = require('./db');
-        const Equipamento = require('./models/equipamento');
         const Propriedade = require('./models/propriedade');
-        const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
 
         await Propriedade.create({
@@ -34,12 +30,8 @@ function readPropriedades() {
         const database = require('./db');
         const Equipamento = require('./models/equipamento');
         const Propriedade = require('./models/propriedade');
-        const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
         
-        // retorna todas as CENAS
         const propriedades = await Propriedade.findAll({
             attributes: ["id", "nome", "descricao"], // selected fields
             include: [{
@@ -57,15 +49,9 @@ function updatePropriedade(idPropriedade) {
     (async () => {
         // inicia conexão com a database
         const database = require('./db');
-        const Equipamento = require('./models/equipamento');
         const Propriedade = require('./models/propriedade');
-        const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
         
-        // retorna as informações da CENA
-        //      retorna também os EQUIPAMENTOS cadastrados na CENA
         const propriedade1 = await Propriedade.findAll({
             attributes: ["nome", "descricao"], // selected fields
             where: {id: idPropriedade}, // filters here
@@ -84,11 +70,7 @@ function updatePropriedade(idPropriedade) {
     })();
 }
 
-//readPropriedades();
-//updatePropriedade('1');
-//createPropriedade('Cor', 'Preta', '2');
-
-//module.exports = { createPropriedade, readPropriedades,  updatePropriedade };
+// exporting modules
 module.exports.createPropriedade=createPropriedade;
 module.exports.readPropriedades=readPropriedades;
 module.exports.updatePropriedade=updatePropriedade;

@@ -7,13 +7,13 @@ function userInput (texto) {
         return name
 }
  /*
-        try {
-            const resultado = await database.sync();
-            console.log(resultado);
-        } catch (error) {
-            console.log(error);
-        }
-        */
+try {
+    const resultado = await database.sync();
+    console.log(resultado);
+} catch (error) {
+    console.log(error);
+}
+*/
        
 // C R U D 
 
@@ -22,11 +22,7 @@ function createCena(nomeCena, descricaoCena) {
     (async () => {
         // inicia conexão com a database
         const database = require('./db');
-        const Equipamento = require('./models/equipamento');
-        const Propriedade = require('./models/propriedade');
         const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
 
         await Cena.create({
@@ -42,10 +38,7 @@ function readCenas() {
         // inicia conexão com a database
         const database = require('./db');
         const Equipamento = require('./models/equipamento');
-        const Propriedade = require('./models/propriedade');
         const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
         
         // retorna todas as CENAS
@@ -95,11 +88,7 @@ function updateCena(idCena) {
     (async () => {
         // inicia conexão com a database
         const database = require('./db');
-        const Equipamento = require('./models/equipamento');
-        const Propriedade = require('./models/propriedade');
         const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
         
         // retorna as informações da CENA
@@ -141,9 +130,7 @@ function deleteItem(nomeTabela, idItem) {
     })();
 }
 
-//module.exports = { createCena, readCena, readCenas, updateCena };
-//module.exports = { deleteItem };
-
+// exporting modules
 module.exports.createCena=createCena;
 module.exports.readCenas=readCenas;
 module.exports.updateCena=updateCena;
