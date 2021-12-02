@@ -1,0 +1,19 @@
+{
+  "name": "automation_db",
+  "version": "1.0.0",
+  "description": "MySQL and Sequelize ORM code",
+  "main": "menu.js",
+  "scripts": {
+    "test": "node menu.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reginatoleo/Automation_DB-js.git"
+  },
+  "author": "Leonardo Reginato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reginatoleo/Automation_DB-js/issues"
+  },
+  "homepage": "https://github.com/reginatoleo/Automation_DB-js#readme"
+}
