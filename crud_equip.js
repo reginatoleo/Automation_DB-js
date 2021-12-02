@@ -1,6 +1,4 @@
 const prompt = require('prompt-sync')();
-const Cena = require('./models/propriedade');
-const Equipamento = require('./models/propriedade');
 
 function userInput (texto) {
     const name = prompt(texto);
@@ -13,10 +11,6 @@ function createEquip(nomeEquip, localEquip, statusEquip, descricaoEquip) {
         // inicia conexão com a database
         const database = require('./db');
         const Equipamento = require('./models/equipamento');
-        const Propriedade = require('./models/propriedade');
-        const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
 
         await Equipamento.create({
@@ -35,9 +29,6 @@ function readEquips() {
         const database = require('./db');
         const Equipamento = require('./models/equipamento');
         const Propriedade = require('./models/propriedade');
-        const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
         
         // retorna todas as CENAS
@@ -85,10 +76,6 @@ function updateEquip(idEquip) {
         // inicia conexão com a database
         const database = require('./db');
         const Equipamento = require('./models/equipamento');
-        const Propriedade = require('./models/propriedade');
-        const Cena = require('./models/cena');
-        //const cenaEquipamento = require('./models/cenaEquipamento');
-        //await database.sync({force: true});
         await database.sync();
         
         const equipamento1 = await Equipamento.findAll({
@@ -117,7 +104,6 @@ function addEquipToCena(idEquip, idCena) {
         // inicia conexão com a database
         const database = require('./db');
         const Equipamento = require('./models/equipamento');
-        const Propriedade = require('./models/propriedade');
         const Cena = require('./models/cena');
         //const cenaEquipamento = require('./models/cenaEquipamento');
         //await database.sync({force: true});
@@ -137,5 +123,10 @@ function addEquipToCena(idEquip, idCena) {
 //createEquip('TV', 'Sala de Estar', 'OFF', 'Televisor de 60"');
 //addEquipToCena('2','3');
 
-module.exports = { createEquip, readEquips, updateEquip };
-module.exports = { addEquipToCena };
+//module.exports = { createEquip, readEquips, updateEquip };
+//module.exports = { addEquipToCena };
+
+module.exports.createEquip=createEquip;
+module.exports.readEquips=readEquips;
+module.exports.updateEquip=updateEquip;
+module.exports.addEquipToCena=addEquipToCena;

@@ -88,4 +88,7 @@ function updatePropriedade(idPropriedade) {
 //updatePropriedade('1');
 //createPropriedade('Cor', 'Preta', '2');
 
-module.exports = { createPropriedade, readPropriedades,  updatePropriedade };
+//module.exports = { createPropriedade, readPropriedades,  updatePropriedade };
+module.exports.createPropriedade=createPropriedade;
+module.exports.readPropriedades=readPropriedades;
+module.exports.updatePropriedade=updatePropriedade;

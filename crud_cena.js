@@ -141,5 +141,10 @@ function deleteItem(nomeTabela, idItem) {
     })();
 }
 
-module.exports = { createCena, readCena, readCenas, updateCena };
-module.exports = { deleteItem };
+//module.exports = { createCena, readCena, readCenas, updateCena };
+//module.exports = { deleteItem };
+
+module.exports.createCena=createCena;
+module.exports.readCenas=readCenas;
+module.exports.updateCena=updateCena;
+module.exports.deleteItem=deleteItem;
